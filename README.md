@@ -14,6 +14,24 @@ moderation dashboard, a review queue of per-video reports, a per-video report
 detail with the per-frame detection table + flagged-frame grid, and a
 human-in-the-loop decision (approve / reject / escalate).
 
+## What it looks like
+
+**Dashboard** — moderation metrics (videos scanned, flagged, pending, clean), a 7-day scan-activity chart, and a recent-scans table.
+
+![Moderation dashboard with scan metrics, activity chart, and recent scans](docs/images/dashboard.png)
+
+**New Scan** — upload a video to B2 and run the pipeline, with sampling, detection-threshold, and violation-label controls.
+
+![New Scan upload form with sampling and threshold controls](docs/images/new-scan.png)
+
+**Review Queue** — every moderation report stored under `moderation/reports/`, with verdict, human decision, flagged-frame count, and scan time.
+
+![Review queue table of moderation reports with verdicts and decisions](docs/images/review-queue.png)
+
+**Report detail** — flagged-frame grid, the per-frame detection table, a run summary, and the human-in-the-loop decision panel.
+
+![Per-video report detail with flagged frames, detection table, and review decision](docs/images/report-detail.png)
+
 ## Why B2
 
 High-velocity UGC ingest multiplies stored objects: every raw video plus its
