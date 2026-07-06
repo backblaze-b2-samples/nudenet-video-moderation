@@ -32,6 +32,8 @@ human-in-the-loop decision (approve / reject / escalate).
 
 ![Per-video report detail with flagged frames, detection table, and review decision](docs/images/report-detail.png)
 
+> _This example run sets the per-scan `violation_labels` override to `FACE_FEMALE` so the flagged → review → decision workflow is populated with safe footage — no NSFW media. Demo clip: [Spring](https://studio.blender.org/films/spring/) © Blender Studio, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)._
+
 ## Why B2
 
 High-velocity UGC ingest multiplies stored objects: every raw video plus its
