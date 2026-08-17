@@ -5,8 +5,15 @@ const MOBILE_QUERY = `(max-width: ${MOBILE_BREAKPOINT - 1}px)`
 
 function subscribe(onStoreChange: () => void) {
   const mql = window.matchMedia(MOBILE_QUERY)
-  mql.addEventListener("change", onStoreChange)
-  return () => mql.removeEventListener("change", onStoreChange)
+  const handleChange = () => onStoreChange()
+
+  if (typeof mql.addEventListener === "function") {
+    mql.addEventListener("change", handleChange)
+    return () => mql.removeEventListener("change", handleChange)
+  }
+
+  mql.addListener(handleChange)
+  return () => mql.removeListener(handleChange)
 }
 
 function getSnapshot() {
